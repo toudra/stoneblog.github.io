@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog sur les Pierres Précieuses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .search-icon {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 40px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gem-container {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gem-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="search-icon" onclick="toggleSearch()">
+    &#128269;
+</div>
+
+<div class="search-bar" id="searchBar">
+    <input type="text" placeholder="Rechercher une pierre" oninput="filterGems()">
+</div>
+
+<div class="gem-container" id="diamond">
+    <img class="gem-image" src="diamant.jpg" alt="Diamant">
+    <h2>Diamant</h2>
+    <p>Nom Scientifique: Diamond</p>
+    <p>Prix : 2 000 €</p>
+  					<p>1 carat</p>
+</div>
+<div class="gem-container" id="jadéite">
+    <img class="gem-image" src="jadeite.jpg" alt="Jadéite">
+    <h2>Jadéite</h2>
+    <p>Nom Scientifique: lapis nephriticus</p>
+    <p>Prix : 25 € - 750 €</p>
+</div>
+<div class="gem-container" id="rubis">
+    <img class="gem-image" src="rubis.jpg" alt="rubis">
+    <h2>rubis</h2>
+    <p>Nom Scientifique: Corindon</p>
+    <p>Prix : 4000 €</p>
+</div>
+<div class="gem-container" id="lapis">
+    <img class="gem-image" src="lapis.jpg" alt="lapis">
+    <h2>Lapis Lazuli</h2>
+    <p>Nom Scientifique: lazurite</p>
+    <p>Prix : 1 €</p>
+</div>
+<div class="gem-container" id="obsidienne">  
+    <img class="gem-image" src="obsidienne.jpeg" alt="obsidienne">
+    <h2>obsidienne</h2>
+    <p>Nom Scientifique: Rhyolites</p>
+    <p>Prix : 2 - 100 €</p>
+</div>
+<div class="gem-container" id="améthyste">  
+    <img class="gem-image" src="améthyste.jpeg" alt="améthyste">
+    <h2>améthyste</h2>
+    <p>Nom Scientifique: Tectosilicate</p>
+    <p>Prix : 5 €</p>
+  					<p>1 carat</p>
+</div>
+<!-- Pierre 1 -->
+<div class="gem-container" id="agate">
+    <img class="gem-image" src="agate.jpg" alt="agate">
+    <h2>Agate</h2>
+    <p>Nom Scientifique: silice</p>
+    <p>Prix : 30 €</p>
+</div>
+
+<!-- Pierre 2 -->
+<div class="gem-container" id="azurite">
+    <img class="gem-image" src="azurite.jpg" alt="azurite">
+    <h2>Azurite</h2>
+    <p>Nom Scientifique: carbonate de cuivre</p>
+    <p>Prix : 40 €</p>
+</div>
+
+<!-- Pierre 3 -->
+<div class="gem-container" id="citrine">
+    <img class="gem-image" src="citrine.jpg" alt="citrine">
+    <h2>Citrine</h2>
+    <p>Nom Scientifique: dioxyde de silicium</p>
+    <p>Prix : 35 €</p>
+</div>
+
+<!-- Pierre 4 -->
+<div class="gem-container" id="dolomite">
+    <img class="gem-image" src="dolomite.jpeg" alt="dolomite">
+    <h2>Dolomite</h2>
+    <p>Nom Scientifique: carbonate de calcium</p>
+    <p>Prix : 25 €</p>
+</div>
+
+<!-- Pierre 5 -->
+<div class="gem-container" id="fluorite">
+    <img class="gem-image" src="fluorite.jpeg" alt="fluorite">
+    <h2>Fluorite</h2>
+    <p>Nom Scientifique: fluorure de calcium</p>
+    <p>Prix : 32 €</p>
+</div>
+
+<!-- Pierre 6 -->
+<div class="gem-container" id="granat">
+    <img class="gem-image" src="granat.jpeg" alt="granat">
+    <h2>Granat</h2>
+    <p>Nom Scientifique: grenat</p>
+    <p>Prix : 38 €</p>
+</div>
+
+<!-- Pierre 7 -->
+<div class="gem-container" id="howlite">
+    <img class="gem-image" src="howlite.jpeg" alt="howlite">
+    <h2>Howlite</h2>
+    <p>Nom Scientifique: borate de calcium</p>
+    <p>Prix : 22 €</p>
+</div>
+
+<!-- Pierre 8 -->
+<div class="gem-container" id="iolite">
+    <img class="gem-image" src="iolite.jpg" alt="iolite">
+    <h2>Iolite</h2>
+    <p>Nom Scientifique: cordiérite</p>
+    <p>Prix : 45 €</p>
+</div>
+
+<!-- Pierre 9 -->
+<div class="gem-container" id="jaspis">
+    <img class="gem-image" src="jaspis.jpg" alt="jaspis">
+    <h2>Jaspis</h2>
+    <p>Nom Scientifique: quartz</p>
+    <p>Prix : 28 €</p>
+</div>
+
+<!-- Pierre 10 -->
+<div class="gem-container" id="kornerupin">
+    <img class="gem-image" src="kornerupin.jpg" alt="kornerupin">
+    <h2>Kornerupine</h2>
+    <p>Nom Scientifique: aluminosilicate</p>
+    <p>Prix : 42 €</p>
+</div>
+
+<!-- Pierre 11 -->
+<div class="gem-container" id="labradorit">
+    <img class="gem-image" src="labradorit.jpeg" alt="labradorit">
+    <h2>Labradorite</h2>
+    <p>Nom Scientifique: feldspath</p>
+    <p>Prix : 50 €</p>
+</div>
+
+<!-- Pierre 12 -->
+<div class="gem-container" id="magnesite">
+    <img class="gem-image" src="magnesite.jpg" alt="magnesite">
+    <h2>Magnesite</h2>
+    <p>Nom Scientifique: carbonate de magnésium</p>
+    <p>Prix : 33 €</p>
+</div>
+
+<!-- Pierre 13 -->
+<div class="gem-container" id="nephrit">
+    <img class="gem-image" src="nephrit.jpg" alt="nephrit">
+    <h2>Nephrit</h2>
+    <p>Nom Scientifique: jade</p>
+    <p>Prix : 55 €</p>
+</div>
+
+<!-- Pierre 14 -->
+<div class="gem-container" id="onyx">
+    <img class="gem-image" src="onyx.jpeg" alt="onyx">
+    <h2>Onyx</h2>
+    <p>Nom Scientifique: calcédoine</p>
+    <p>Prix : 48 €</p>
+</div>
+
+<!-- Pierre 15 -->
+<div class="gem-container" id="prehnite">
+    <img class="gem-image" src="prehnite.jpeg" alt="prehnite">
+    <h2>Prehnite</h2>
+    <p>Nom Scientifique: silicate d'aluminium</p>
+    <p>Prix : 37 €</p>
+</div>
+
+<!-- Pierre 16 -->
+<div class="gem-container" id="quartz">
+    <img class="gem-image" src="quartz.jpeg" alt="quartz">
+    <h2>Quartz</h2>
+    <p>Nom Scientifique: dioxyde de silicium</p>
+    <p>Prix : 30 €</p>
+</div>
+
+<!-- Pierre 17 -->
+<div class="gem-container" id="rhodochrosit">
+    <img class="gem-image" src="rhodochrosit.jpeg" alt="rhodochrosit">
+    <h2>Rhodochrosit</h2>
+    <p>Nom Scientifique: carbonate de manganèse</p>
+    <p>Prix : 44 €</p>
+</div>
+
+<!-- Pierre 18 -->
+<div class="gem-container" id="serpentine">
+    <img class="gem-image" src="serpentine.jpg" alt="serpentine">
+    <h2>Serpentine</h2>
+    <p>Nom Scientifique: silicate</p>
+    <p>Prix : 26 €</p>
+</div>
+
+<!-- Pierre 19 -->
+<div class="gem-container" id="topaze">
+    <img class="gem-image" src="topaze.jpg" alt="topaze">
+    <h2>Topaze</h2>
+    <p>Nom Scientifique: fluosilicate d'aluminium</p>
+    <p>Prix : 46 €</p>
+</div>
+<script>
+    function toggleSearch() {
+        var searchBar = document.getElementById('searchBar');
+        searchBar.style.display = (searchBar.style.display === 'none' || searchBar.style.display === '') ? 'block' : 'none';
+    }
+
+    function filterGems() {
+        var input, filter, gems, gem, i, txtValue;
+        input = document.querySelector('.search-bar input');
+        filter = input.value.toUpperCase();
+        gems = document.querySelectorAll('.gem-container');
+        
+        for (i = 0; i < gems.length; i++) {
+            gem = gems[i].getElementsByTagName("h2")[0];
+            txtValue = gem.textContent || gem.innerText;
+            
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                gems[i].style.display = "";
+            } else {
+                gems[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
